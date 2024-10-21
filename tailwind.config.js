@@ -10,6 +10,15 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        whiteColor : "#EAEAEA",
+        yellowColor : "#FEF600",
+        yellowColor2 : "#AEAA20",
+        yellowColor3 : "#686508",
+        blackColor : "#000",
+        yellowColor2: "#F2A948",
+        brownColor : "#6F3224",
+        transparent : "#FFC63B00",
+        wiraaColor: "#2a9d8f"
       },
     },
   },

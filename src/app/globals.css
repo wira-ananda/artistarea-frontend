@@ -1,27 +1,115 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @import "bootstrap/scss/bootstrap"; */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* app/globals.css */
+body {
+  font-family: 'Poppins', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+* {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  text-decoration: none;
+  border: none;
+}
+
+html {
+  font-size: 10px;
+  background-color: #eaeaea;
+}
+
+html::-webkit-scrollbar {
+  width: 6px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #212224;
+}
+
+html::-webkit-scrollbar-track {
+  background: #eaeaea;
+}
+
+.text-shadow-yellow {
+  text-shadow: 2px 2px 4px #FEF600;
+}
+.text-shadow-black {
+  text-shadow: 2px 2px 4px #000;
+}
+.text-shadow-white {
+  text-shadow: 2px 2px 4px #fff;
+}
+
+
+#efekKaca {
+  border-radius: 10px;
+  background: #000000a8;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.70);
+  backdrop-filter: blur(10px);
+}
+
+#gradient {
+  background: rgb(234,234,234);
+  background: linear-gradient(180deg, rgba(234,234,234,0) 0%, rgba(234,234,234,1) 35%, rgba(234,234,234,1) 100%);
+}
+
+#headnav {
+  /* border-radius: 15px; */
+  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+}
+
+#NavHover {
+  transition: .2s;
+}
+
+#waterMark {
+  background: linear-gradient(92.11deg, #00ffe1 30%, #ffffff 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+#textGradient{
+  background: linear-gradient(90deg,  #bdb600 30%, #fff 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradientYellowBlack{
+  background: linear-gradient(90deg,  #bdb600 30%, #000 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media screen and (max-width: 639px) {
+  html {
+    font-size: 6px;
   }
 }
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@media screen and (min-width: 640px) and (max-width: 768px) {
+  html {
+    font-size: 9px;
+  }
+  header img {
+    margin-left: 0.5rem;
+  }
+  header div section#logo {
+    display: flex;
+  }
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@media screen and (min-width: 769px) and (max-width: 1280px) {
+  html {
+    font-size: 8.5px;
+  }
+}
+@media screen and (min-width: 1279px) and (max-width: 1536px) {
+  html {
+    font-size: 10px;
   }
 }
