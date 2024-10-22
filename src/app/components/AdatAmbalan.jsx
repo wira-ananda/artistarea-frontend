@@ -25,7 +25,7 @@ export default function AdatAmbalan() {
       />
       <div
         onClick={openPDFInNewTab}
-        className="cursor-pointer bottom-4 w-full h-full items-center pl-[10%] flex gap-[3rem] text-yellowColor relative z-10 transition-color duration-300 ease-in-out hover:text-shadow-yellow"
+        className="cursor-pointer bottom-4 w-full h-full items-center pl-[10%] flex gap-[3rem] text-yellowColor relative transition-color duration-300 ease-in-out hover:text-shadow-yellow"
       >
         <FaBookOpen
           size={40}
