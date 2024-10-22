@@ -6,7 +6,6 @@ import { FaBookOpen } from "react-icons/fa"; // Importing the book icon from rea
 
 // Define paths for assets located in the public folder
 const AdatAmbalanPDF = "/pdf/AdatAmbalanAbbulosibatang.pdf"; // Direct path as it’s in public
-const Latar = "/img/lab.png"; // Direct path for the background image
 
 export default function AdatAmbalan() {
   // Function to open the PDF in a new tab
@@ -17,21 +16,24 @@ export default function AdatAmbalan() {
   return (
     <div className="w-full h-[10vh] md:h-[20vh] relative">
       <Image
-        src={Latar} // Using Image component for the background
+        src="/img/lab.png" // Using Image component for the background
         alt="Background" // Alt text for accessibility
         layout="fill" // Makes the image cover the entire parent div
         objectFit="cover" // Ensures the image covers the div properly
         className="absolute inset-0" // Absolute positioning to cover the entire div
+        unoptimized
       />
-      <div className="w-full h-full items-center pl-[10%] flex gap-[3rem] text-yellowColor text-shadow-black relative z-10">
+      <div
+        onClick={openPDFInNewTab}
+        className="cursor-pointer bottom-4 w-full h-full items-center pl-[10%] flex gap-[3rem] text-yellowColor relative z-10 transition-color duration-300 ease-in-out hover:text-shadow-yellow"
+      >
         <FaBookOpen
-          size={50}
-          onClick={openPDFInNewTab}
-          className="cursor-pointer"
+          size={40}
+          className="transition-shadow duration-300 hover:text-shadow-yellow"
         />
         <span className="block text-left">
           <p className="font-bold text-[2rem]">Adat Ambalan</p>
-          <p className="font-normal text-[1.7rem]">Abbulosibatang</p>
+          <p className="text-[1.7rem]">Abbulosibatang</p>
         </span>
       </div>
     </div>

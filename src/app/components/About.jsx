@@ -12,8 +12,8 @@ export default function About() {
         <div className="w-full bottom-20  block md:flex justify-between">
           {/* Section 1: History */}
           <div className="w-full md:w-[50%] text-center">
-            <div className="h-[13vh] bg-yellowColor flex items-center pl-[10%] gap-[3rem]">
-              <TbHistoryToggle size={50} />
+            <div className="h-[7vh] md:h-[13vh] bg-yellowColor flex items-center pl-[10%] gap-[3rem]">
+              <TbHistoryToggle size={40} />
               <span className="block text-left">
                 <p className="font-bold text-[2rem]">Selayang Pandang</p>
                 <p className="font-medium text-[1.7rem]">Abbulosibatang</p>
@@ -34,14 +34,21 @@ export default function About() {
                   tetap konsisten berkarya selama {calculatedAge} tahun, dari
                   masa ke masa tetap menjadi teladan.
                 </p>
+                <p className="text-left">
+                  <span className="font-bold">Kata Abbulosibatang</span> berasal
+                  dari bahasa makassar yang berarti{" "}
+                  <span className="font-bold">Serumpun Bambu</span> yang
+                  bermakna persatuan, pemuda teguh dalam iman dan kuat dalam
+                  pendirian, serta kokoh dalam keadaan apapun.
+                </p>
               </div>
             </div>
           </div>
 
           {/* Section 2: Events */}
           <div className="w-full md:w-[50%] text-center">
-            <div className="h-[13vh] bg-yellowColor md:bg-white flex items-center pl-[10%] gap-[3rem] text-black">
-              <MdEventNote size={50} />
+            <div className="h-[7vh] md:h-[13vh] bg-yellowColor md:bg-white flex items-center pl-[10%] gap-[3rem] text-black">
+              <MdEventNote size={40} />
               <span className="block text-left">
                 <p className="font-bold text-[2rem]">Main Event</p>
                 <p className="font-normal text-[1.7rem]">Abbulosibatang</p>
