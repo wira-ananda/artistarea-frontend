@@ -39,6 +39,9 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" href="/abbLogo.png" type="image/png" />
+        <title>Ambalan Abbulosibatang</title>
+        <meta name="description" content={metadata.description} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.className} antialiased`} // Include Poppins class
