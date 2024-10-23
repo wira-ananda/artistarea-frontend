@@ -74,8 +74,10 @@ const ArticleDetailPage = async ({ params }) => {
       <div className="w-full mx-auto px-4 py-6">
         {" "}
         {/* Background black, text white */}
-        <div className="w-[60%] mx-auto">
-          <h1 className="text-[4.5rem] font-bold mb-4">{article.title[0]}</h1>
+        <div className="w-[70%] md:w-[60%] mx-auto">
+          <h1 className="text-[2.5rem] md:text-[4.5rem] font-bold mb-4">
+            {article.title[0]}
+          </h1>
 
           {/* Use html-react-parser to render HTML content */}
           <div className="mt-4 text-black leading-relaxed text-[1.5rem]">
