@@ -1,7 +1,9 @@
+import Link from "next/link"; // Ensure you import Link from Next.js
+
 const ArticlesList = ({ articles, loading, error }) => {
   return (
     <>
-      {loading && <p className="text-yellowColor">Loading articles...</p>}
+      {loading && <p className="text-yellow-500">Loading articles...</p>}
       {error && <p className="text-red-500">{error}</p>}
       {articles.length > 0 && (
         <div>
@@ -18,15 +20,21 @@ const ArticlesList = ({ articles, loading, error }) => {
             // Regex untuk mengambil tanggal dari konten yang dienkode
             const dateRegex = /<strong>(.*?)<\/strong>/;
             const matchDate = contentEncoded.match(dateRegex);
+
+            // Ambil judul dan slug untuk router
+            const title = article.title ? article.title[0] : "No Title";
+            const slug = title
+              .toLowerCase()
+              .replace(/\s+/g, "-")
+              .replace(/[^\w-]+/g, "");
+
             const lastIndex = articles.length - 1; // Perbaikan di sini
 
             return (
               <div key={index}>
-                <a
+                <Link
                   className="flex pb-4 w-full"
-                  href={article.link ? article.link[0] : "#"}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`/${slug}`} // Use dynamic routing to link to the article's detail page
                 >
                   <div
                     className={`flex w-full gap-4 md:text-[1.35rem] text-[1.5rem] cursor-pointer hover:bg-gray-900 transition-colors duration-200 ease-in-out ${
@@ -39,9 +47,7 @@ const ArticlesList = ({ articles, loading, error }) => {
                         <img
                           className="w-[150px] h-[70px] object-cover"
                           src={matchImg[1]}
-                          alt={`Image for ${
-                            article.title ? article.title[0] : "article"
-                          }`}
+                          alt={`Image for ${title}`}
                         />
                       </div>
                     )}
@@ -52,13 +58,11 @@ const ArticlesList = ({ articles, loading, error }) => {
                       )}
                       <div className="w-[96%]">
                         {/* Tampilkan judul artikel */}
-                        <p className="text-white font-semibold">
-                          {article.title ? article.title[0] : "No Title"}
-                        </p>
+                        <p className="text-white font-semibold">{title}</p>
                       </div>
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
             );
           })}

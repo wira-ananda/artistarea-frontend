@@ -32,7 +32,7 @@ export default function Home() {
       className="w-[100%] h-[65vh] sm:h-[50vh] md:h-[100vh] font-bold"
       id="Home"
     >
-      <Header />
+      <Header gradient="textGradient" />
       <div className="flex">
         <div className="w-full mx-auto">
           <div className="top-[20%] px-[5%] md:px-1 md:w-[47%] font-bold ml-10 lg:ml-32 text-center md:text-start text-yellowColor">

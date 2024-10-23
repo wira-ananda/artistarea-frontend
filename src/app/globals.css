@@ -8,7 +8,6 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-
 * {
   position: relative;
   font-family: 'Poppins', sans-serif;
@@ -88,12 +87,14 @@ html::-webkit-scrollbar-track {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 2px 2px 30px #fff700;
 }
-.gradientYellowBlack{
-  background: linear-gradient(90deg,  #bdb600 30%, #000 80%);
+#textGradient2{
+  background: linear-gradient(90deg,   #000 40%, #fff700 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 2px 2px 30px #000;
 }
 
 .video-container {

@@ -5,12 +5,19 @@ import Headroom from "react-headroom";
 import Image from "next/image";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"; // Icon for menu toggle
 
-export default function Header() {
+export default function Header({ gradient }) {
   const [navList, setNavList] = useState(false);
 
   const changeNav = () => {
     setNavList(!navList);
   };
+
+  const isWhiteBackground = true; // Change this based on your logic
+
+  // Define the gradient class based on background condition
+  const textGradientClass = isWhiteBackground
+    ? "bg-gradient-to-r from-black to-transparent" // Black text gradient if background is white
+    : "bg-gradient-to-r from-[#fff700] to-[#fff]";
 
   return (
     <Headroom>
@@ -30,9 +37,9 @@ export default function Header() {
               />
             </div>
             <div className="items-center flex">
-              <div className="text-[1.5rem] font-medium">
-                <h1 id="textGradient">Accera'</h1>
-                <h1 id="textGradient" className="bottom-2">
+              <div className="text-[1.5rem] font-semibold">
+                <h1 id={gradient}>Accera'</h1>
+                <h1 id={gradient} className="bottom-2">
                   Sitongka'-Tongka'
                 </h1>
               </div>

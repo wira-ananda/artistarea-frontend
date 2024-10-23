@@ -12,10 +12,11 @@
     "@prisma/client": "^5.21.1",
     "axios": "^1.7.7",
     "cors": "^2.8.5",
+    "dompurify": "^3.1.7",
     "express": "^4.21.1",
     "framer-motion": "^11.11.9",
+    "html-react-parser": "^5.1.18",
     "next": "14.2.15",
-    "nodemon": "^3.1.7",
     "prisma": "^5.21.1",
     "react": "^18",
     "react-dom": "^18",
@@ -27,6 +28,7 @@
     "xml2js": "^0.6.2"
   },
   "devDependencies": {
+    "nodemon": "^3.1.7",
     "postcss": "^8",
     "tailwindcss": "^3.4.1"
   }
