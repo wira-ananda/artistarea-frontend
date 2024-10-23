@@ -2,11 +2,17 @@
   "name": "nextabb",
   "version": "0.1.0",
   "private": true,
+  "main": "index.js",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "go": "next start",
+    "lint": "next lint",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@prisma/client": "^5.21.1",
