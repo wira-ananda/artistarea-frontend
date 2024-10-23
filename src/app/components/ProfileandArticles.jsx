@@ -62,7 +62,7 @@ export default function ProfileandArticles() {
                   return (
                     <a key={index} className="flex pb-4 w-full">
                       <a
-                        className="flex w-full gap-4 text-[1.3rem]  cursor-pointer hover:bg-gray-900 transition-colors duration-200 ease-in-out"
+                        className="flex w-full gap-4 md:text-[1.35rem] text-[1.5rem]  cursor-pointer hover:bg-gray-900 transition-colors duration-200 ease-in-out"
                         href={article.link}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -76,7 +76,7 @@ export default function ProfileandArticles() {
                             />
                           </div>
                         )}
-                        <div className="w-[70%] md:w-[80%] ">
+                        <div className="w-[70%] md:w-[80%] md:my-auto">
                           {matchDate && (
                             <p className="text-white">
                               <p>{matchDate[1]}</p>

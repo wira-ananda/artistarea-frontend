@@ -69,9 +69,9 @@ export default function Contact() {
           </a>
         </div>
         <div className="flex justify-center items-center pt-[4rem] text-white">
-          <p className="text-center text-sm">
+          <p className="text-center text-sm font-thin">
             Copyright © 2024{" "}
-            <span className="font-semibold">Ambalan Abbulosibatang</span> - All
+            <span className="font-medium">Ambalan Abbulosibatang</span> - All
             rights reserved.
           </p>
         </div>

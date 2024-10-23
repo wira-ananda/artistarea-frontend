@@ -84,7 +84,7 @@ html::-webkit-scrollbar-track {
 
 
 #textGradient{
-  background: linear-gradient(90deg,  #bdb600 30%, #fff 80%);
+  background: linear-gradient(90deg,  #fff700 30%, #fff 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
