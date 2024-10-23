@@ -9,9 +9,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "go": "next start",
+    "next": "next start",
     "lint": "next lint",
-    "start": "node index.js",
+    "node": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
