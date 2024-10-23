@@ -2,11 +2,15 @@
 import React from "react";
 import ReactPlayer from "react-player/youtube";
 import { MdOutlineSlowMotionVideo, MdOutlineArticle } from "react-icons/md";
-import useFetchArticles from "../../server/fetching/useFetchArticles";
-import useFetchVideo from "../../server/fetching/useFetchVideo";
+import useFetchData from "../../server/hooks/useFetchData";
+import useFetchVideo from "../../server/hooks/useFetchVideo";
 
 export default function ProfileandArticles() {
-  const { articles, loading, error } = useFetchArticles(
+  const {
+    data: articles,
+    loading,
+    error,
+  } = useFetchData(
     "https://v1.nocodeapi.com/urwiraaanda/medium/IdwHnhSFoYCavcFK"
   );
 
