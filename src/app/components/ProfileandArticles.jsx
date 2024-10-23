@@ -8,7 +8,7 @@ import ArticlesList from "../components/ArticlesList";
 
 export default function ProfileandArticles() {
   const { articles, loading, error } = useFetchArticle(
-    "http://localhost:5000/api/articles"
+    "https://abbscout1987.vercel.app/api/articles"
   ); // Gunakan proxy URL
   const { isClient, videoUrls, currentVideoIndex, handleVideoEnd } =
     useFetchVideo();

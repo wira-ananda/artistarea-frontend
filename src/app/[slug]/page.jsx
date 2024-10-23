@@ -10,7 +10,9 @@ const ArticleDetailPage = async ({ params }) => {
 
   const fetchArticle = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/articles");
+      const response = await axios.get(
+        "https://abbscout1987.vercel.app/api/articles"
+      );
       if (response.status !== 200) {
         throw new Error("Failed to fetch articles");
       }
