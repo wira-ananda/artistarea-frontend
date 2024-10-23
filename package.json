@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "next": "next start",
+    "start": "next start",
     "lint": "next lint",
     "node": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
