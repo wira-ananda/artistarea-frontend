@@ -97,8 +97,7 @@ html::-webkit-scrollbar-track {
 }
 
 .video-container {
-  border: 0px solid #ffffff; /* Ganti dengan warna yang diinginkan */
-  border-radius: 0px 0px 4px 4px; /* Sudut melengkung (opsional) */
+  border-radius: 0px 0px 7px 7px; /* Sudut melengkung (opsional) */
   overflow: hidden; /* Mencegah konten melampaui batas */
 }
 
