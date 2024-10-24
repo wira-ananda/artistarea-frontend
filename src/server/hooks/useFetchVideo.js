@@ -12,7 +12,7 @@ const useFetchVideo = () => {
 
   const videoUrls = Array.isArray(video?.videoplayer)
     ? video.videoplayer.map(item => item.url)
-    : [];
+    : ["https://www.youtube.com/watch?v=V9PVRfjEBTI", "https://www.youtube.com/watch?v=5GJWxDKyk3A", "https://www.youtube.com/watch?v=-tn2S3kJlyU", "https://www.youtube.com/watch?v=cW8VLC9nnTo&list=RDEMcce0hP5SVByOVCd8UWUHEA&index=10"];
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [isClient, setIsClient] = useState(false);

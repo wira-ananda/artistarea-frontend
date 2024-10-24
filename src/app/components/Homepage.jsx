@@ -32,9 +32,9 @@ export default function Home() {
     >
       <Header gradient="textGradient" />
       <div className="flex">
-        <div className="w-full mx-auto">
-          <div className="top-[20%] px-[5%] md:px-1 md:w-[47%] font-bold ml-10 lg:ml-32 text-center md:text-start text-yellowColor">
-            <span className="text-[1.5rem] md:text-[2.2rem] top-[1rem]">
+        <div className="w-full mx-auto px-[5%] md:px-1 ">
+          <div className="md:w-[47%]  top-[5%] font-bold ml-10 lg:ml-32 text-center md:text-start text-yellowColor">
+            <span className="text-[2rem] top-[1rem]">
               <a id="textGradient" className="font-semibold">
                 Selamat Datang,{" "}
               </a>

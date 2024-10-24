@@ -2,7 +2,7 @@ import { TbHistoryToggle } from "react-icons/tb";
 import { MdEventNote } from "react-icons/md";
 
 export default function About() {
-  const foundingYear = 1987; // Replace with the actual founding year
+  const foundingYear = 1987;
   const currentYear = new Date().getFullYear();
   const calculatedAge = currentYear - foundingYear;
 
@@ -12,7 +12,7 @@ export default function About() {
         <div className="w-full bottom-20  block md:flex justify-between">
           {/* Section 1: History */}
           <div className="w-full md:w-[50%] text-center">
-            <div className="h-[7vh] md:h-[13vh] bg-yellowColor flex items-center pl-[10%] gap-[3rem]">
+            <div className="py-8 bg-yellowColor flex items-center pl-[10%] gap-[3rem]">
               <TbHistoryToggle size={40} />
               <span className="block text-left">
                 <p className="font-bold text-[2rem]">Selayang Pandang</p>
@@ -47,7 +47,7 @@ export default function About() {
 
           {/* Section 2: Events */}
           <div className="w-full md:w-[50%] text-center">
-            <div className="h-[7vh] md:h-[13vh] bg-yellowColor md:bg-white flex items-center pl-[10%] gap-[3rem] text-black">
+            <div className="py-8 bg-yellowColor md:bg-white flex items-center pl-[10%] gap-[3rem] text-black">
               <MdEventNote size={40} />
               <span className="block text-left">
                 <p className="font-bold text-[2rem]">Main Event</p>
