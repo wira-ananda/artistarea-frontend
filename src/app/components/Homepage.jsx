@@ -7,12 +7,10 @@ export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Jalankan hanya di sisi klien
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
 
-    // Set ukuran awal saat komponen di-mount
     handleResize();
 
     window.addEventListener("resize", handleResize);
