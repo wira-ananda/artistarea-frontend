@@ -15,7 +15,7 @@ export default function ProfileandArticles() {
 
   return (
     <div className="w-full bg-black">
-      <div className="w-[80%] md:w-[90%] bottom-10 mx-auto block md:flex justify-between">
+      <div className="w-[90%] bottom-10 mx-auto block md:flex justify-between">
         <div className="md:w-[35%] w-full">
           <div className="h-[7vh] md:h-[13vh] bg-yellowColor md:bg-white flex items-center pl-[5%] md:pl-[10%] gap-[3rem]">
             <MdOutlineSlowMotionVideo size={40} />

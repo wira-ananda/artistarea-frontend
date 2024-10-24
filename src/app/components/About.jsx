@@ -20,7 +20,7 @@ export default function About() {
               </span>
             </div>
             <div className="bg-black text-white py-[5%]">
-              <div className="w-[90%] block mx-auto text-[1.5rem]">
+              <div className="w-[90%] block mx-auto text-[1.75rem]">
                 <p className="text-left">
                   <span className="font-bold">Ambalan Abbulosibatang</span> yang
                   juga dikenal sebagai Abb Scout adalah satuan pramuka penegak
@@ -55,7 +55,7 @@ export default function About() {
               </span>
             </div>
             <div className="bg-black text-white py-[5%]">
-              <div className="w-[90%] block mx-auto text-[1.5rem]">
+              <div className="w-[90%] block mx-auto text-[1.75rem]">
                 <p className="text-left">
                   <span className="font-bold">ABB SCORE:</span> Lomba Tingkat
                   Penegak se Sulawesi Selatan dan Barat dengan model perkemahan,

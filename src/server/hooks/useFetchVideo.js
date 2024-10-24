@@ -11,7 +11,7 @@ const useFetchVideo = () => {
   );
 
   const videoUrls = Array.isArray(video?.videoplayer)
-    ? video.videoplayer.map(item => item.url) // Gunakan map untuk mendapatkan semua URL
+    ? video.videoplayer.map(item => item.url)
     : [];
 
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);

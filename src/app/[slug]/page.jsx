@@ -59,7 +59,7 @@ const ArticleDetailPage = async ({ params }) => {
       }
       if (domNode.name === "figcaption") {
         return (
-          <figcaption className="text-center mt-4 mb-8">
+          <figcaption className="text-center mt-4 mb-8 text-[1.8rem]">
             {domToReact(domNode.children)}
           </figcaption>
         );
@@ -73,11 +73,9 @@ const ArticleDetailPage = async ({ params }) => {
       <div className="w-full mx-auto px-4 py-6">
         {" "}
         <div className="w-[90%] md:w-[60%] mx-auto">
-          <h1 className="text-[2.7rem] md:text-[4.5rem] font-bold mb-4">
-            {article.title[0]}
-          </h1>
+          <h1 className="text-[4.3rem] font-bold mb-4">{article.title[0]}</h1>
 
-          <div className="mt-4 text-black leading-relaxed text-[1.7rem]">
+          <div className="mt-4 text-black leading-relaxed text-[2.1rem]">
             {" "}
             {parse(contentEncoded, options)}
           </div>
