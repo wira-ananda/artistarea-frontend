@@ -45,7 +45,7 @@ export default function ProfileandArticles() {
               <p className="font-medium text-[1.7rem]">Abbulosibatang</p>
             </span>
           </div>
-          <div className="pt-5 pl-5">
+          <div className="pt-5">
             <ArticlesList articles={articles} loading={loading} error={error} />
           </div>
         </div>

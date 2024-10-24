@@ -27,7 +27,7 @@ export default function Home() {
         backgroundImage: `url('/img/sad.png')`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        backgroundPosition: isMobile ? "51.5%" : "center",
+        backgroundPosition: isMobile ? "48.5%" : "center",
       }}
       className="w-[100%] h-[65vh] sm:h-[50vh] md:h-[100vh] font-bold"
       id="Home"

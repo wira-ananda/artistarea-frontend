@@ -26,7 +26,6 @@ const ArticleDetailPage = async ({ params }) => {
         return formattedTitle === slug;
       });
 
-      // Extract content and images
       const contentEncoded = article["content:encoded"][0] || "";
       const imageUrls = [
         ...new Set(
@@ -36,7 +35,6 @@ const ArticleDetailPage = async ({ params }) => {
         ),
       ];
 
-      // Add image URLs to the article object
       article.images = imageUrls.map((url) => ({ url }));
 
       return article;
@@ -54,17 +52,16 @@ const ArticleDetailPage = async ({ params }) => {
 
   const contentEncoded = article["content:encoded"][0] || "";
 
-  // Custom parser function to add classes to <p> and <figcaption> tags
   const options = {
     replace: (domNode) => {
       if (domNode.name === "p") {
-        return <p className="mb-6">{domToReact(domNode.children)}</p>; // Add margin-bottom class
+        return <p className="mb-6">{domToReact(domNode.children)}</p>;
       }
       if (domNode.name === "figcaption") {
         return (
           <figcaption className="text-center mt-4 mb-8">
             {domToReact(domNode.children)}
-          </figcaption> // Center the figcaption
+          </figcaption>
         );
       }
     },
@@ -75,16 +72,13 @@ const ArticleDetailPage = async ({ params }) => {
       <Header gradient="textGradient2" />
       <div className="w-full mx-auto px-4 py-6">
         {" "}
-        {/* Background black, text white */}
-        <div className="w-[70%] md:w-[60%] mx-auto">
-          <h1 className="text-[2.5rem] md:text-[4.5rem] font-bold mb-4">
+        <div className="w-[90%] md:w-[60%] mx-auto">
+          <h1 className="text-[2.7rem] md:text-[4.5rem] font-bold mb-4">
             {article.title[0]}
           </h1>
 
-          {/* Use html-react-parser to render HTML content */}
-          <div className="mt-4 text-black leading-relaxed text-[1.5rem]">
+          <div className="mt-4 text-black leading-relaxed text-[1.7rem]">
             {" "}
-            {/* Ensure text is white */}
             {parse(contentEncoded, options)}
           </div>
         </div>

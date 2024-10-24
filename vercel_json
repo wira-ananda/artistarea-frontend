@@ -1,3 +1,5 @@
+// ubah file nya ke vercel.json utk deploy api express
+
 {
   "version": 2,
   "builds": [
@@ -13,4 +15,3 @@
     }
   ]
 }
-//ubah file nya ke vercel.json utk deploy api express
