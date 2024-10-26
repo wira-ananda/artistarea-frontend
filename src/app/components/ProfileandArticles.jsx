@@ -8,7 +8,7 @@ import ArticlesList from "../components/ArticlesList";
 
 export default function ProfileandArticles() {
   const { articles, loading, error } = useFetchArticle(
-    "https://abbscout1987.vercel.app/api/articles"
+    "https://abbscout-api.vercel.app/api/articles"
   );
   const { isClient, videoUrls, currentVideoIndex, handleVideoEnd } =
     useFetchVideo();
