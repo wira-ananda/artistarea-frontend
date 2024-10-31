@@ -17,15 +17,15 @@ export default function ArtList() {
     };
 
     fetchData();
-  }, []);
+  }, [artworks]);
 
   if (artworks.length === 0) return <p className="text-center">Loading...</p>;
 
   return (
-    <div className="my-[2rem] w-full">
+    <div className="my-[2rem] w-full ">
       <div className="container mx-auto w-[80%] ">
         <div className="text-[2rem] font-semibold my-4">Now on View!</div>
-        <div className="flex gap-4 flex-nowrap overflow-x-auto no-scrollbar">
+        <div className="flex gap-4 h-full overflow-x-auto no-scrollbar">
           {artworks.map((artwork) => (
             <Link key={artwork.id} href={`/${artwork.id}`} className="">
               <ArtCard
@@ -43,7 +43,7 @@ export default function ArtList() {
 
 function ArtCard({ imageUrl, caption, uploader }) {
   return (
-    <div className="bg-white min-w-[300px] max-w-[300px]">
+    <div className="bg-white min-w-[300px] max-w-[300px] h-full cursor-pointer hover:bg-gray-300 transition-colors duration-200 ease-in-out">
       <div className="relative w-full cursor-pointer">
         <img
           src={imageUrl}

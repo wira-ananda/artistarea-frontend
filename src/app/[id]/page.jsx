@@ -38,7 +38,6 @@ const ArtworkDetailPage = ({ params }) => {
             alt={artwork.title}
             className="w-full h-auto mb-4"
           />
-          <p className="text-black text-[2.1rem] mb-4">{artwork.description}</p>
           <p className="text-black text-[2.1rem]">Price: {artwork.price}</p>
           <p className="text-black text-[2.1rem]">
             Created by: {artwork.artist.name}

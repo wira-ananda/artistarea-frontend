@@ -20,7 +20,7 @@ export default function Home() {
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="flex items-center justify-center h-full relative z-10">
         <div className="text-center">
-          <div className="font-bold text-yellowColor">
+          <div className="bottom-[6rem]">
             <span className="text-[2rem]">
               <a id="textGradient3" className="font-semibold">
                 Selamat Datang,{" "}
