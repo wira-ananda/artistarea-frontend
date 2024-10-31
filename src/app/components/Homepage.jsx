@@ -49,7 +49,6 @@ export default function Home() {
                   strings: [
                     `<span id='textGradient'>Pramuka Salis</span>`,
                     `<span id='textGradient'>Ambalan Abbulosibatang</span>`,
-                    `<span id='textGradient'>Ambalan Abbulosibatang</span>`,
                   ],
                 }}
               />
