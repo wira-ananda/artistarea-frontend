@@ -1,31 +1,25 @@
 import React from "react";
 import Image from "next/image";
-import Contact from "./Contact";
 
 export default function Footer() {
   return (
     <>
-      {" "}
-      <Contact />
       <div
         id="Footer"
-        className="h-[7vh] lg:h-[12vh] w-full bg-black flex items-center"
+        className="h-[7vh] lg:h-[12vh] w-full  flex items-center"
       >
-        <div className="w-[80%] h-full flex justify-between m-auto items-center text-white">
+        <div className="w-[80%] h-full flex justify-between m-auto items-center ">
           <div className="flex items-center">
             <Image
-              src="/img/abbLogo.png"
-              alt="Abb Logo"
+              src="/img/logo.png"
+              alt="Artist Area Logo"
               width={55}
               height={55}
               className="w-[40px] sm:w-[50px] md:w-[55px]"
               unoptimized
             />
             <div className="text-[1.5rem] sm:text-[1.6rem] lg:text-[1.7rem] font-semibold">
-              <h1 id="textGradient">Ambalan</h1>
-              <h1 id="textGradient" className="bottom-3">
-                Abbulosibatang
-              </h1>
+              <h1 id="textGradient">Artist Area</h1>
             </div>
           </div>
           <h1 className="text-[1.5rem] lg:text-[1.7rem] font-medium text-wiraaColor">

@@ -12,8 +12,8 @@ export default function Header({ gradient }) {
           <div className="flex text-[1.8rem] h-full ">
             <div className="flex items-center">
               <Image
-                src="/img/abbLogo.png"
-                alt="Abb Logo"
+                src="/img/logo.png"
+                alt="Artist Area Logo"
                 width={60}
                 height={60}
                 className="ml-[3rem]"
@@ -22,10 +22,7 @@ export default function Header({ gradient }) {
             </div>
             <div className="items-center flex">
               <div className="text-[1.7rem] font-semibold">
-                <h1 id={gradient}>Accera'</h1>
-                <h1 id={gradient} className="bottom-2">
-                  Sitongka'-Tongka'
-                </h1>
+                <h1 id={gradient}>Artist Area</h1>
               </div>
             </div>
           </div>

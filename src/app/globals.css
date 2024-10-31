@@ -8,6 +8,15 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Menghilangkan scrollbar untuk WebKit (Chrome, Safari) */
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* Untuk Internet Explorer dan Edge */
+  scrollbar-width: none; /* Untuk Firefox */
+}
+
 * {
   position: relative;
   font-family: 'Poppins', sans-serif;
@@ -75,7 +84,7 @@ html::-webkit-scrollbar-track {
 }
 
 #waterMark {
-  background: linear-gradient(92.11deg, #00ffe1 30%, #ffffff 70%);
+  background: linear-gradient(92.11deg, #00ffe1 30%, #1f1f1f 70%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -83,18 +92,24 @@ html::-webkit-scrollbar-track {
 
 
 #textGradient{
-  background: linear-gradient(90deg,  #fff700 30%, #fff 80%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 2px 2px 30px #fff700;
-}
-#textGradient2{
-  background: linear-gradient(90deg,   #000 40%, #fff700 80%);
+  background: linear-gradient(90deg,  #FF6B6B 30%, #313131 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-shadow: 2px 2px 30px #000;
+}
+#textGradient2{
+  background: linear-gradient(90deg,   #2B2D42 40%, #F8F4EF 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 2px 2px 30px #000;
+}
+#textGradient3{
+  background: linear-gradient(90deg,  #FF6B6B 30%, #F8F4EF 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .video-container {

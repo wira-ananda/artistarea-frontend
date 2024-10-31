@@ -1,16 +1,12 @@
-import Homepage from "./components/Homepage";
-import About from "./components/About";
+import ArtList from "./components/ArtList";
 import Footer from "./components/Footer";
-import AdatAmbalan from "./components/AdatAmbalan";
-import ProfileandArticles from "./components/ProfileandArticles";
+import Homepage from "./components/Homepage";
 
 export default function Home() {
   return (
     <>
       <Homepage />
-      <About />
-      <AdatAmbalan />
-      <ProfileandArticles />
+      <ArtList />
       <Footer />
     </>
   );
