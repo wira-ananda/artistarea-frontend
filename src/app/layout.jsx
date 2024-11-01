@@ -21,7 +21,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Ambalan Abbulosibatang",
+  title: "Artist Area | Wiraa",
   description: "Laman resmi Abbulosibatang Pramuka Salis",
 };
 

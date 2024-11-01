@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
+import Header from "@/app/user/components/Header";
+import Footer from "@/app/user/components/Footer";
 import { fetchArtworkById } from "@/api/libs/api";
 
 const ArtworkDetailPage = ({ params }) => {
