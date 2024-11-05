@@ -9,8 +9,7 @@ const validationSchema = Yup.object({
   password: Yup.string().required("Password wajib diisi"),
 });
 
-const LoginForm = () => {
-  const [isArtist, setIsArtist] = useState(false);
+const LoginForm = ({ isArtist, setIsArtist }) => {
   const [user, setUser] = useState([]);
   const [artist, setArtist] = useState([]);
 
@@ -116,16 +115,6 @@ const LoginForm = () => {
                     className="text-red-500 text-sm mt-1"
                   />
                 </div>
-                {isArtist && (
-                  <button onClick={() => setIsArtist(false)}>
-                    pindah ke akun user | lg di artist
-                  </button>
-                )}
-                {!isArtist && (
-                  <button onClick={() => setIsArtist(true)}>
-                    pindah ke akun artist | lg di user
-                  </button>
-                )}
                 <button
                   type="submit"
                   disabled={isSubmitting}
