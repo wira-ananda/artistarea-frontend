@@ -2,7 +2,7 @@
 import axiosInstance from "../axios";
 
 // Mengambil data artis berdasarkan ID
-export const fetchArtist = async (artistId) => {
+export const fetchArtistById = async (artistId) => {
   try {
     const response = await axiosInstance.get(`/artist/${artistId}`);
     return response.data?.data || {};
@@ -12,7 +12,6 @@ export const fetchArtist = async (artistId) => {
   }
 };
 
-// Mengambil semua artwork
 export const fetchArtwork = async () => {
   try {
     const response = await axiosInstance.get(`/artwork`);
@@ -34,10 +33,19 @@ export const fetchArtworkById = async (artworkId) => {
   }
 };
 
-// Mengambil data pengguna berdasarkan ID
-export const fetchUser = async (userId) => {
+export const fetchUserById = async (userId) => {
   try {
     const response = await axiosInstance.get(`/user/${userId}`);
+    return response.data?.data || {};
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+    throw error;
+  }
+};
+
+export const fetchUser = async () => {
+  try {
+    const response = await axiosInstance.get(`/user`);
     return response.data?.data || {};
   } catch (error) {
     console.error("Error fetching user data:", error);

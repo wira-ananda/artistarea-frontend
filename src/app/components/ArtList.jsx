@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { fetchArtwork } from "@/api/libs/api";
+import { fetchArtwork } from "@/api/libs/fetching";
 
 export default function ArtList() {
   const [artworks, setArtworks] = useState([]);
@@ -17,7 +17,7 @@ export default function ArtList() {
     };
 
     fetchData();
-  }, [artworks]);
+  }, []);
 
   if (artworks.length === 0) return <p className="text-center">Loading...</p>;
 
