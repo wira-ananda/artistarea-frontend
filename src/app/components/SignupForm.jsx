@@ -1,45 +1,29 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { fetchAllUser } from "@/api/libs/fetching";
+import { registerUser } from "@/api/libs/fetching";
 
 const validationSchema = Yup.object({
-  username: Yup.string().required("Username wajib diisi"),
-  password: Yup.string().required("Password wajib diisi"),
+  name: Yup.string().required("Nama wajib diisi"),
+  email: Yup.string().email("Email tidak valid").required("Email wajib diisi"),
+  password: Yup.string()
+    .min(6, "Password minimal 6 karakter")
+    .required("Password wajib diisi"),
 });
 
-const LoginForm = () => {
-  const [user, setUser] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const userData = await fetchAllUser();
-        setUser(userData);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-    fetchData();
-  }, []);
-
-  const handleSubmit = (values, { setSubmitting }) => {
-    console.log("Login dicoba:", values);
+const SignupForm = () => {
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    console.log("Mencoba sign up:", values);
     setSubmitting(true);
+
     try {
-      const userData = user;
-      const foundUser = userData.find(
-        (user) =>
-          user.email === values.username && user.password === values.password
-      );
-      if (foundUser) {
-        console.log("Login berhasil", foundUser);
-        window.location.href = "/user";
-      } else {
-        console.log("Salah");
-      }
+      await registerUser(values);
+      console.log("Sign up berhasil");
+      resetForm();
+      window.location.href = "/user";
     } catch (error) {
-      console.error("Error during login:", error);
+      console.error("Error during sign up:", error);
     } finally {
       setSubmitting(false);
     }
@@ -49,9 +33,9 @@ const LoginForm = () => {
     <div className="w-full">
       <div className="w-[50%] mx-auto">
         <div className="w-[70%] mx-auto">
-          <h2 className="text-2xl font-semibold text-center mb-4">Login</h2>
+          <h2 className="text-2xl font-semibold text-center mb-4">Sign Up</h2>
           <Formik
-            initialValues={{ username: "", password: "" }}
+            initialValues={{ name: "", email: "", password: "" }}
             validationSchema={validationSchema}
             onSubmit={handleSubmit}
           >
@@ -59,19 +43,39 @@ const LoginForm = () => {
               <Form>
                 <div className="mb-4">
                   <label
-                    htmlFor="username"
+                    htmlFor="name"
                     className="block text-sm font-medium mb-1"
                   >
-                    Username
+                    Nama
                   </label>
                   <Field
                     type="text"
-                    name="username"
-                    id="username"
+                    name="name"
+                    id="name"
                     className="w-full px-3 py-2 border rounded-md"
                   />
                   <ErrorMessage
-                    name="username"
+                    name="name"
+                    component="div"
+                    className="text-red-500 text-sm mt-1"
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium mb-1"
+                  >
+                    Email
+                  </label>
+                  <Field
+                    type="email"
+                    name="email"
+                    id="email"
+                    className="w-full px-3 py-2 border rounded-md"
+                  />
+                  <ErrorMessage
+                    name="email"
                     component="div"
                     className="text-red-500 text-sm mt-1"
                   />
@@ -102,7 +106,7 @@ const LoginForm = () => {
                   disabled={isSubmitting}
                   className="w-full bg-blue-500 text-white py-2 rounded-md mt-4 hover:bg-blue-600 transition duration-200"
                 >
-                  {isSubmitting ? "Loading..." : "Login"}
+                  {isSubmitting ? "Loading..." : "Sign Up"}
                 </button>
               </Form>
             )}
@@ -113,4 +117,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default SignupForm;
