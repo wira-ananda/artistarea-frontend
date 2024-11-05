@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { fetchAllUser } from "@/api/libs/fetching";
+import { fetchAllUser, fetchAllArtist } from "@/api/libs/fetching";
 
 const validationSchema = Yup.object({
   username: Yup.string().required("Username wajib diisi"),
@@ -10,33 +10,54 @@ const validationSchema = Yup.object({
 });
 
 const LoginForm = () => {
+  const [isArtist, setIsArtist] = useState(false);
   const [user, setUser] = useState([]);
+  const [artist, setArtist] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userData = await fetchAllUser();
-        setUser(userData);
+        if (isArtist) {
+          const artistData = await fetchAllArtist();
+          setArtist(artistData);
+        } else {
+          const userData = await fetchAllUser();
+          setUser(userData);
+        }
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
     fetchData();
-  }, []);
+  }, [isArtist]);
 
   const handleSubmit = (values, { setSubmitting }) => {
     console.log("Login dicoba:", values);
     setSubmitting(true);
     try {
-      const userData = user;
-      const foundUser = userData.find(
-        (user) =>
-          user.email === values.username && user.password === values.password
-      );
-      if (foundUser) {
-        console.log("Login berhasil", foundUser);
-        window.location.href = "/user";
+      if (isArtist) {
+        const foundArtist = artist.find(
+          (artist) =>
+            artist.name === values.username &&
+            artist.password === values.password
+        );
+        if (foundArtist) {
+          console.log("Login berhasil", foundArtist);
+          window.location.href = "/user";
+        } else {
+          console.log("Salah");
+        }
       } else {
-        console.log("Salah");
+        const foundUser = user.find(
+          (user) =>
+            user.email === values.username && user.password === values.password
+        );
+        if (foundUser) {
+          console.log("Login berhasil", foundUser);
+          window.location.href = "/user";
+        } else {
+          console.log("Salah");
+        }
       }
     } catch (error) {
       console.error("Error during login:", error);
@@ -62,7 +83,7 @@ const LoginForm = () => {
                     htmlFor="username"
                     className="block text-sm font-medium mb-1"
                   >
-                    Username
+                    Name
                   </label>
                   <Field
                     type="text"
@@ -76,7 +97,6 @@ const LoginForm = () => {
                     className="text-red-500 text-sm mt-1"
                   />
                 </div>
-
                 <div className="mb-4">
                   <label
                     htmlFor="password"
@@ -96,7 +116,16 @@ const LoginForm = () => {
                     className="text-red-500 text-sm mt-1"
                   />
                 </div>
-
+                {isArtist && (
+                  <button onClick={() => setIsArtist(false)}>
+                    pindah ke akun user | lg di artist
+                  </button>
+                )}
+                {!isArtist && (
+                  <button onClick={() => setIsArtist(true)}>
+                    pindah ke akun artist | lg di user
+                  </button>
+                )}
                 <button
                   type="submit"
                   disabled={isSubmitting}
