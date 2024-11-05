@@ -19,7 +19,8 @@ export default function ArtList() {
     fetchData();
   }, []);
 
-  if (artworks.length === 0) return <p className="text-center">Loading...</p>;
+  if (artworks.length === 0)
+    return <p className="text-center justify-center">Loading...</p>;
 
   return (
     <div className="my-[2rem] w-full ">
