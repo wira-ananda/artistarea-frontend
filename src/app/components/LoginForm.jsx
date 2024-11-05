@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { fetchUser } from "@/api/libs/fetching";
+import { fetchAllUser } from "@/api/libs/fetching";
 
 const validationSchema = Yup.object({
   username: Yup.string().required("Username wajib diisi"),
@@ -16,7 +16,7 @@ const LoginForm = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userData = await fetchUser();
+        const userData = await fetchAllUser();
         setUser(userData);
       } catch (error) {
         console.error("Error fetching data:", error);

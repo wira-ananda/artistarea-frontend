@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { fetchArtwork } from "@/api/libs/fetching";
+import { fetchAllArtwork } from "@/api/libs/fetching";
 
 export default function ArtList() {
   const [artworks, setArtworks] = useState([]);
@@ -9,7 +9,7 @@ export default function ArtList() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const artworkData = await fetchArtwork();
+        const artworkData = await fetchAllArtwork();
         setArtworks(artworkData);
       } catch (error) {
         console.error("Error fetching data:", error);

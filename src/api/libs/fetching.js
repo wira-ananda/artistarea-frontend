@@ -12,7 +12,7 @@ export const fetchArtistById = async (artistId) => {
   }
 };
 
-export const fetchArtwork = async () => {
+export const fetchAllArtwork = async () => {
   try {
     const response = await axiosInstance.get(`/artwork`);
     return response.data?.data || [];
@@ -22,7 +22,6 @@ export const fetchArtwork = async () => {
   }
 };
 
-// Mengambil artwork berdasarkan ID
 export const fetchArtworkById = async (artworkId) => {
   try {
     const response = await axiosInstance.get(`/artwork/${artworkId}`);
@@ -43,7 +42,7 @@ export const fetchUserById = async (userId) => {
   }
 };
 
-export const fetchUser = async () => {
+export const fetchAllUser = async () => {
   try {
     const response = await axiosInstance.get(`/user`);
     return response.data?.data || {};
