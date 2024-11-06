@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import ArtList from "../components/ArtList";
 import Footer from "../components/Footer";
