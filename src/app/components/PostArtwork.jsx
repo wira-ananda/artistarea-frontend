@@ -6,7 +6,6 @@ import { postArtwork } from "@/api/libs/fetching";
 
 const validationSchema = Yup.object({
   title: Yup.string().required("Judul wajib diisi"),
-  description: Yup.string().required("Deskripsi wajib diisi"),
   price: Yup.number().required("Harga wajib diisi").min(0, "Harga minimal 0"),
   imageUrl: Yup.string()
     .url("URL tidak valid")
