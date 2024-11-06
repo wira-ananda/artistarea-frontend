@@ -20,6 +20,16 @@ export const fetchAllArtist = async () => {
   }
 };
 
+export const postArtwork = async (data) => {
+  try {
+    const response = await axiosInstance.post(`/artwork/post`, data);
+    return response.data?.data || [];
+  } catch (error) {
+    console.error("Error fetching artwork data:", error);
+    throw error;
+  }
+};
+
 export const fetchAllArtwork = async () => {
   try {
     const response = await axiosInstance.get(`/artwork`);
