@@ -27,11 +27,7 @@ export default function RootLayout({ children }) {
         />
         <meta name="description" content="abbscout" />
       </head>
-      <body
-        className={` ${poppins.className} antialiased`} // Include Poppins class
-      >
-        {children}
-      </body>
+      <body className={` ${poppins.className} antialiased`}>{children}</body>
     </html>
   );
 }
