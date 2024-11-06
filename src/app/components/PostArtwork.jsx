@@ -4,18 +4,18 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { postArtwork } from "@/api/libs/fetching";
 
-const validationSchema = Yup.object({
-  title: Yup.string().required("Judul wajib diisi"),
-  price: Yup.number().required("Harga wajib diisi").min(0, "Harga minimal 0"),
-  imageUrl: Yup.string()
-    .url("URL tidak valid")
-    .required("URL gambar wajib diisi"),
-  artistId: Yup.number()
-    .required("ID Artis wajib diisi")
-    .min(1, "ID Artis minimal 1"),
-});
-
 const PostArtwork = () => {
+  const validationSchema = Yup.object({
+    title: Yup.string().required("Judul wajib diisi"),
+    price: Yup.number().required("Harga wajib diisi").min(0, "Harga minimal 0"),
+    imageUrl: Yup.string()
+      .url("URL tidak valid")
+      .required("URL gambar wajib diisi"),
+    artistId: Yup.number()
+      .required("ID Artis wajib diisi")
+      .min(1, "ID Artis minimal 1"),
+  });
+
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
       await postArtwork(values);

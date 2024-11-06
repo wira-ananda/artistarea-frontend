@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { registerUser, registerArtist } from "@/api/libs/fetching";
+import { handleSubmitSignup } from "../clients/handleSubmitSignup";
 
 const SignupForm = ({ isArtist, setIsArtist }) => {
   const validationSchema = Yup.object(
@@ -24,26 +24,7 @@ const SignupForm = ({ isArtist, setIsArtist }) => {
   );
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
-    console.log("Mencoba sign up:", values);
-    setSubmitting(true);
-
-    try {
-      if (isArtist) {
-        await registerArtist(values);
-        console.log("Sign up berhasil");
-        resetForm();
-        window.location.href = "/home";
-      } else {
-        await registerUser(values);
-        console.log("Sign up berhasil");
-        resetForm();
-        window.location.href = "/home";
-      }
-    } catch (error) {
-      console.error("Error during sign up:", error);
-    } finally {
-      setSubmitting(false);
-    }
+    handleSubmitSignup(values, isArtist, { setSubmitting, resetForm });
   };
 
   return (

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { use } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useFetchAllUser } from "../clients/useFetchUser";
 import { useFetchAllArtist } from "../clients/useFetchArtist";
+import { handleSubmitLogin } from "../clients/handleSubmitLogin";
 
 const LoginForm = ({ isArtist, setIsArtist }) => {
   const validationSchema = Yup.object({
@@ -14,38 +15,7 @@ const LoginForm = ({ isArtist, setIsArtist }) => {
   const { artist } = useFetchAllArtist();
 
   const handleSubmit = (values, { setSubmitting }) => {
-    console.log("Login dicoba:", values);
-    setSubmitting(true);
-    try {
-      if (isArtist) {
-        const foundArtist = artist.find(
-          (artist) =>
-            artist.name === values.username &&
-            artist.password === values.password
-        );
-        if (foundArtist) {
-          console.log("Login berhasil", foundArtist);
-          window.location.href = "/home";
-        } else {
-          console.log("Salah");
-        }
-      } else {
-        const foundUser = user.find(
-          (user) =>
-            user.email === values.username && user.password === values.password
-        );
-        if (foundUser) {
-          console.log("Login berhasil", foundUser);
-          window.location.href = "/home";
-        } else {
-          console.log("Salah");
-        }
-      }
-    } catch (error) {
-      console.error("Error during login:", error);
-    } finally {
-      setSubmitting(false);
-    }
+    handleSubmitLogin(values, user, artist, isArtist, { setSubmitting });
   };
 
   return (
