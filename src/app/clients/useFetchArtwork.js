@@ -39,3 +39,4 @@ export const useFetchArtworkById = (id)=> {
   }, [id])
   return {artwork: artwork || [], loading}
 } 
+
