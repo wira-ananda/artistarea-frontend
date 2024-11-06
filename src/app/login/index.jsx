@@ -1,11 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import LoginForm from "../components/LoginForm";
 import SignupForm from "../components/SignupForm";
+import useMode from "../clients/useMode";
 
 export default function Login() {
-  const [isLogin, setIsLogin] = useState(true);
-  const [isArtist, setIsArtist] = useState(false);
+  const { isArtist, setIsArtist, isLogin, setIsLogin } = useMode();
 
   const toggleForm = () => {
     setIsLogin(!isLogin);

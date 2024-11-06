@@ -1,8 +1,8 @@
-"use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { fetchAllUser, fetchAllArtist } from "@/api/libs/fetching";
+import { useFetchAllUser } from "../clients/useFetchUser";
+import { useFetchAllArtist } from "../clients/useFetchArtist";
 
 const LoginForm = ({ isArtist, setIsArtist }) => {
   const validationSchema = Yup.object({
@@ -10,25 +10,8 @@ const LoginForm = ({ isArtist, setIsArtist }) => {
     password: Yup.string().required("Password wajib diisi"),
   });
 
-  const [user, setUser] = useState([]);
-  const [artist, setArtist] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        if (isArtist) {
-          const artistData = await fetchAllArtist();
-          setArtist(artistData);
-        } else {
-          const userData = await fetchAllUser();
-          setUser(userData);
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-    fetchData();
-  }, [isArtist]);
+  const { user } = useFetchAllUser();
+  const { artist } = useFetchAllArtist();
 
   const handleSubmit = (values, { setSubmitting }) => {
     console.log("Login dicoba:", values);
@@ -42,7 +25,7 @@ const LoginForm = ({ isArtist, setIsArtist }) => {
         );
         if (foundArtist) {
           console.log("Login berhasil", foundArtist);
-          window.location.href = "/user";
+          window.location.href = "/home";
         } else {
           console.log("Salah");
         }
@@ -53,7 +36,7 @@ const LoginForm = ({ isArtist, setIsArtist }) => {
         );
         if (foundUser) {
           console.log("Login berhasil", foundUser);
-          window.location.href = "/user";
+          window.location.href = "/home";
         } else {
           console.log("Salah");
         }

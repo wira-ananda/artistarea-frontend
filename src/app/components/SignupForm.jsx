@@ -1,5 +1,4 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { registerUser, registerArtist } from "@/api/libs/fetching";
@@ -33,12 +32,12 @@ const SignupForm = ({ isArtist, setIsArtist }) => {
         await registerArtist(values);
         console.log("Sign up berhasil");
         resetForm();
-        window.location.href = "/artist";
+        window.location.href = "/home";
       } else {
         await registerUser(values);
         console.log("Sign up berhasil");
         resetForm();
-        window.location.href = "/user";
+        window.location.href = "/home";
       }
     } catch (error) {
       console.error("Error during sign up:", error);
