@@ -17,7 +17,7 @@ export default function Login() {
         {isLogin ? (
           <LoginForm isArtist={isArtist} setIsArtist={setIsArtist} />
         ) : (
-          <SignupForm />
+          <SignupForm isArtist={isArtist} setIsArtist={setIsArtist} />
         )}
         <div className="text-center mt-4">
           <button

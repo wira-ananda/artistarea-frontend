@@ -4,12 +4,12 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { fetchAllUser, fetchAllArtist } from "@/api/libs/fetching";
 
-const validationSchema = Yup.object({
-  username: Yup.string().required("Username wajib diisi"),
-  password: Yup.string().required("Password wajib diisi"),
-});
-
 const LoginForm = ({ isArtist, setIsArtist }) => {
+  const validationSchema = Yup.object({
+    username: Yup.string().required("Username wajib diisi"),
+    password: Yup.string().required("Password wajib diisi"),
+  });
+
   const [user, setUser] = useState([]);
   const [artist, setArtist] = useState([]);
 

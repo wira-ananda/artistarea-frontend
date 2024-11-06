@@ -1,7 +1,5 @@
-// src/api/libs/api.js
 import axiosInstance from "../axios";
 
-// Mengambil data artis berdasarkan ID
 export const fetchArtistById = async (artistId) => {
   try {
     const response = await axiosInstance.get(`/artist/${artistId}`);
@@ -11,6 +9,7 @@ export const fetchArtistById = async (artistId) => {
     throw error;
   }
 };
+
 export const fetchAllArtist = async () => {
   try {
     const response = await axiosInstance.get(`/artist`);
@@ -51,9 +50,9 @@ export const fetchUserById = async (userId) => {
   }
 };
 
-export const registerUser = async (userData) => {
+export const registerUser = async (data) => {
   try {
-    const response = await axiosInstance.post(`/user/register`, userData);
+    const response = await axiosInstance.post(`/user/register`, data);
     return response.data?.data || {};
   } catch (error) {
     console.error("Error fetching user data:", error);
@@ -64,6 +63,16 @@ export const registerUser = async (userData) => {
 export const fetchAllUser = async () => {
   try {
     const response = await axiosInstance.get(`/user`);
+    return response.data?.data || {};
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+    throw error;
+  }
+};
+
+export const registerArtist = async (data) => {
+  try {
+    const response = await axiosInstance.post(`/artist/register`, data);
     return response.data?.data || {};
   } catch (error) {
     console.error("Error fetching user data:", error);
