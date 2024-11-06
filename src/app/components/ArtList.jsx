@@ -1,23 +1,10 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
-import { fetchAllArtwork } from "@/api/libs/fetching";
+import { useFetchAllArtwork } from "../clients/useFetchArtwork";
 
 export default function ArtList() {
-  const [artworks, setArtworks] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const artworkData = await fetchAllArtwork();
-        setArtworks(artworkData);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const { artworks } = useFetchAllArtwork();
 
   if (artworks.length === 0)
     return <p className="text-center justify-center">Loading...</p>;
