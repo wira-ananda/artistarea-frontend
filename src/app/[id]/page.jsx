@@ -1,5 +1,4 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import { useFetchArtworkById } from "../clients/useFetchArtwork";
