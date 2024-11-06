@@ -1,18 +1,5 @@
-import localFont from "next/font/local";
 import { Poppins } from "next/font/google"; // Import Poppins from Google Fonts
 import "./globals.css";
-
-// Local fonts
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 // Google Fonts
 const poppins = Poppins({
@@ -42,7 +29,7 @@ export default function RootLayout({ children }) {
         <meta name="description" content="abbscout" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.className} antialiased`} // Include Poppins class
+        className={` ${poppins.className} antialiased`} // Include Poppins class
       >
         {children}
       </body>
