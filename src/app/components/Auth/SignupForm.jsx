@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { handleSubmitSignup } from "../clients/handleSubmitSignup";
+import { handleSubmitSignup } from "../../clients/handler/handlerSignup";
 
 const SignupForm = ({ isArtist, setIsArtist }) => {
   const validationSchema = Yup.object(

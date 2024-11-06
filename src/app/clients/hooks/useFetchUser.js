@@ -1,22 +1,23 @@
 "use client"
 import { useEffect, useState } from "react"
-import { fetchAllArtist } from "@/api/libs/fetching"
+import { fetchAllUser } from "@/api/apiServices"
 import useMode from "./useMode"
 
-export const useFetchAllArtist = () => {
-  const [artist, setArtist] = useState([]);
+export const useFetchAllUser = () => {
+  const [user, setUser] = useState([]);
   const {isArtist, setIsArtist} = useMode();
 
  useEffect(()=> {
   const fetchData = async ()=> {
     try {
-      const artistData = await fetchAllArtist()
-      setArtist(artistData)
+      const userData = await fetchAllUser()
+      setUser(userData)
     } catch (error) {
      console.log('Error fetching data:', error); 
     }
   }
   fetchData()
  }, [isArtist])
- return {artist: artist ||[]}
+ 
+ return {user: user || []}
 }

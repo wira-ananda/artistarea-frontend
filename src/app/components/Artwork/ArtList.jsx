@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { useFetchAllArtwork } from "../clients/useFetchArtwork";
+import { useFetchAllArtwork } from "../../clients/hooks/useFetchArtwork";
 
 export default function ArtList() {
   const { artworks } = useFetchAllArtwork();

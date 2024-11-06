@@ -1,4 +1,4 @@
-import { registerArtist, registerUser } from "@/api/libs/fetching";
+import { registerArtist, registerUser } from "@/api/apiServices";
 
 export const handleSubmitSignup = async (values, isArtist, { setSubmitting, resetForm }) => {
   console.log("Mencoba sign up:", values);

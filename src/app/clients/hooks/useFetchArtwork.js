@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState } from "react"
-import { fetchAllArtwork, fetchArtworkById } from "@/api/libs/fetching"
+import { fetchAllArtwork, fetchArtworkById } from "@/api/apiServices"
 
 export const useFetchAllArtwork = ()=> {
   const [artworks, setArtworks]= useState([]

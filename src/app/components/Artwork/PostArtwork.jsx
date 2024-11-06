@@ -2,7 +2,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { postArtwork } from "@/api/libs/fetching";
+import { postArtwork } from "@/api/apiServices";
 
 const PostArtwork = () => {
   const validationSchema = Yup.object({

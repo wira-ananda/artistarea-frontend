@@ -1,9 +1,9 @@
 import React, { use } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { useFetchAllUser } from "../clients/useFetchUser";
-import { useFetchAllArtist } from "../clients/useFetchArtist";
-import { handleSubmitLogin } from "../clients/handleSubmitLogin";
+import { useFetchAllUser } from "../../clients/hooks/useFetchUser";
+import { useFetchAllArtist } from "../../clients/hooks/useFetchArtist";
+import { handleSubmitLogin } from "../../clients/handler/handlerLogin";
 
 const LoginForm = ({ isArtist, setIsArtist }) => {
   const validationSchema = Yup.object({

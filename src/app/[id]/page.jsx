@@ -2,7 +2,7 @@
 import React from "react";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
-import { useFetchArtworkById } from "../clients/useFetchArtwork";
+import { useFetchArtworkById } from "../clients/hooks/useFetchArtwork";
 
 const ArtworkDetailPage = ({ params }) => {
   const { id } = params;

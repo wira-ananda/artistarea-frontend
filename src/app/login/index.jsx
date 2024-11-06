@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import LoginForm from "../components/LoginForm";
-import SignupForm from "../components/SignupForm";
-import useMode from "../clients/useMode";
+import LoginForm from "../components/Auth/LoginForm";
+import SignupForm from "../components/Auth/SignupForm";
+import useMode from "../clients/hooks/useMode";
 
 export default function Login() {
   const { isArtist, setIsArtist, isLogin, setIsLogin } = useMode();
