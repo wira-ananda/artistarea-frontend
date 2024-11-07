@@ -1,30 +1,15 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import Header from "@/app/user/components/Header";
-import Footer from "@/app/user/components/Footer";
-import { fetchArtworkById } from "@/api/libs/api";
+import React from "react";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
+import { useFetchArtworkById } from "../clients/hooks/useFetchArtwork";
 
 const ArtworkDetailPage = ({ params }) => {
   const { id } = params;
-  const [artwork, setArtwork] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const artworkData = await fetchArtworkById(id);
-        setArtwork(artworkData);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [id]);
+  const { artwork, loading } = useFetchArtworkById(id);
 
   if (loading) return <p className="text-center">Loading...</p>;
+
   if (!artwork) return <p className="text-center">Artwork tidak ditemukan.</p>;
 
   return (
